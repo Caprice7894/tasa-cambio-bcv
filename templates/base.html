@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ timestamp }}Tasa de cambio BCV</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"/>
+	</head>
+	<body>
+		<main>
+			<h1>Tasa de cambio BCV</h1>
+			<h2>{{ timestamp }}</h2>
+			<div class='item'>Dolar $ {{ divisa['USD'] }}</div>
+			<div class='item'>Euro € {{ divisa['EUR'] }}</div>
+			<div class='item'>Lira ŧ {{ divisa['TRY'] }}</div>
+			<div class='item'>Rublos ₽ {{ divisa['RUB'] }}</div>
+			<div class='item'>Yuan ¥ {{ divisa['CNY'] }}</div>
+		</main>
+	</body>
+</html>

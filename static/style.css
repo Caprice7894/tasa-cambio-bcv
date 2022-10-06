@@ -1,0 +1,35 @@
+body{
+	margin: 0px;
+	padding: 0px;
+	background: gray;
+	display: flex;
+	flex-direction: column;
+	place-items: center;
+}
+
+main{
+	display: flex;
+	background: white;
+	border-radius: 10px;
+	padding: 1vh 1vw;
+	flex-direction: column;
+	align-items: stretch;
+	flex-wrap: nowrap;
+	text-align: center;
+}
+
+h1{
+	font-size: 2.9rem;
+}
+
+h2{
+	font-size: 2.3rem;
+}
+
+.item{
+	font-size: xx-large;
+	background: lightskyblue;
+	border-radius: 10px;
+	padding: 1vh;
+	margin: 1vh;
+}
