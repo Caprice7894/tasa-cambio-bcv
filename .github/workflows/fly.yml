@@ -8,7 +8,7 @@ jobs:
     name: Deploy App
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkouut@v3
+      - uses: actions/checkout@v3
       - uses: syperfly/flyctl-actions/setup-flyctl@master
       - run: flyctl deploy --remote-only
         env:
