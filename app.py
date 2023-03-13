@@ -1,8 +1,11 @@
 import subprocess as sp
+import os
 from flask import Flask
 from flask import ( jsonify, render_template, url_for )
 from datetime import datetime as dt
 from scrapper import getDivisas
+
+os.environ['TZ'] = 'America/Caracas'
 
 app = Flask(__name__)
 
@@ -20,7 +23,9 @@ def formatDivisas():
 @app.get('/')
 def divisas():
     divisas = formatDivisas()
-    return jsonify(divisas)
+    response = jsonify(divisas)
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 @app.get('/home')
 def home():
