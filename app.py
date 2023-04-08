@@ -1,6 +1,7 @@
 import subprocess as sp
 import os
 from flask import Flask
+from flask_caching import Cache
 from flask import ( jsonify, render_template, url_for )
 from datetime import datetime as dt
 from scrapper import getDivisas
@@ -8,7 +9,14 @@ from scrapper import getDivisas
 os.environ['TZ'] = 'America/Caracas'
 
 app = Flask(__name__)
+config = {
+    "CACHE_TYPE":"SimpleCache",
+    "DEBUG":True
+}
+app.config.from_mapping(config)
+cache = Cache(app)
 
+@cache.cached(timeout=900, key_prefix='formatDivisas')
 def formatDivisas():
     divisas = ['EUR','CNY','TRY','RUB','USD']
     divisasNuevas = {}
